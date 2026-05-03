@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* ─── Animations ─────────────────────────────────────────────── */
+
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-15deg); }
+  50%       { transform: translateY(-14px) rotate(-10deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(20deg); }
+  50%       { transform: translateY(-10px) rotate(25deg); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-8px) rotate(5deg); }
+}
+
+/* ─── Page wrapper ───────────────────────────────────────────── */
+
+.page {
+  background: #080808;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Center glow ────────────────────────────────────────────── */
+
+.centerGlow {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(180, 230, 80, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────── */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  border-bottom: 1px solid rgba(180, 230, 80, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logoLight {
+  color: #E8F0D4;
+}
+
+.logoAccent {
+  color: #C8E66B;
+}
+
+.logoDot {
+  width: 6px;
+  height: 6px;
+  background: #C8E66B;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 3px;
+  margin-bottom: 10px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+
+.btnPrimary {
+  background: #C8E66B;
+  color: #080808;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.btnPrimary:hover {
+  opacity: 0.88;
+  transform: scale(0.98);
+}
+
+.btnOutline {
+  background: transparent;
+  color: #C8E66B;
+  border: 1px solid rgba(180, 230, 80, 0.4);
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnOutline:hover {
+  background: rgba(180, 230, 80, 0.06);
+}
+
+
+
+/* ─── Hero section ───────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 48px 70px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Badge ──────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(180, 230, 80, 0.12);
+  border: 1px solid rgba(180, 230, 80, 0.25);
+  border-radius: 99px;
+  padding: 5px 16px;
+  font-size: 12px;
+  color: #C8E66B;
+  font-weight: 500;
+  margin-bottom: 28px;
+  letter-spacing: 0.3px;
+}
+
+.badgeDot {
+  width: 5px;
+  height: 5px;
+  background: #C8E66B;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ─── Pill icon cluster ──────────────────────────────────────── */
+
+.pillCluster {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.pillMain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px rgba(180, 230, 80, 0.6))
+          drop-shadow(0 0 40px rgba(180, 230, 80, 0.25));
+}
+
+.pillSmall {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  animation: float2 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(180, 230, 80, 0.35));
+}
+
+.pillTiny {
+  position: absolute;
+  bottom: 8px;
+  left: -5px;
+  animation: float3 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(180, 230, 80, 0.3));
+}
+
+.pillExtra {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  animation: float 4s ease-in-out infinite 1s;
+  filter: drop-shadow(0 0 6px rgba(180, 230, 80, 0.25));
+}
+
+/* ─── Heading ────────────────────────────────────────────────── */
+
+.heading {
+  font-family: 'Syne', sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  color: #E8F0D4;
+  margin-bottom: 20px;
+}
+
+.headingAccent {
+  color: #C8E66B;
+}
+
+/* ─── Subtext ────────────────────────────────────────────────── */
+
+.subtext {
+  font-size: 15px;
+  color: #6B7B5A;
+  max-width: 380px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ─── CTA buttons row ────────────────────────────────────────── */
+
+.ctaRow {
+  display: flex;
+  gap: 12px;
+}
+
+.btnPrimaryLg {
+  background: #C8E66B;
+  color: #080808;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnPrimaryLg:hover {
+  opacity: 0.88;
+  transform: scale(0.98);
+}
